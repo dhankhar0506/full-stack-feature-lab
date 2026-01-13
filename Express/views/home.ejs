@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+
+    <!-- Header Component -->
+    <%- include("component/Header.ejs", { title: "This is Home Page" }) %>
+
+        <h1>Product List</h1>
+
+        <% products.forEach(item=> { %>
+            <p>
+                ID: <%= item.id %> <br>
+                    Name: <%= item.name %> <br>
+                        Category: <%= item.category %> <br>
+                            Price: ₹<%= item.price %> <br>
+                                Stock: <%= item.inStock ? "In Stock" : "Out of Stock" %>
+            </p>
+            <hr>
+            <% }) %>
+
+</body>
+
+</html>
